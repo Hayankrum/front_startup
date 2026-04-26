@@ -1,0 +1,321 @@
+:root {
+  --bg-main: #0a0a0a;
+  --bg-card: #111111;
+  --bg-input: #0d0d0d;
+  --border: #1a1a1a;
+  --border-light: #222222;
+  
+  --text-main: #e0e0e0;
+  --text-soft: #888888;
+  --text-muted: #555555;
+  
+  --accent: #c0c0c0;
+  --accent-dim: #2a2a2a;
+  
+  --danger: #aa5555;
+  --success: #55aa55;
+  --warning: #aaaa55;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Tipografia monoespaçada */
+h1, h2, h3, h4, button, input, textarea, select {
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+}
+
+h1 { font-size: 1.5rem; font-weight: normal; margin-bottom: 1.5rem; }
+h2 { font-size: 1.2rem; font-weight: normal; margin-bottom: 1rem; }
+h3 { font-size: 1rem; font-weight: normal; }
+
+/* Container principal das páginas */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header padrão */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-header h1 {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.page-header .count {
+  color: var(--text-soft);
+  font-size: 0.8rem;
+}
+
+/* Formulários estilo terminal */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--text-soft);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+input.error, textarea.error, select.error {
+  border-color: var(--danger);
+}
+
+.error-message {
+  color: var(--danger);
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+button, .btn {
+  background: var(--accent-dim);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: monospace;
+  transition: all 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: var(--accent);
+  color: var(--bg-main);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg-main);
+}
+
+.btn-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: var(--danger);
+  color: var(--bg-main);
+}
+
+/* Cards estilo terminal */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.terminal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.terminal-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.card-title {
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.card-content {
+  color: var(--text-soft);
+  font-size: 0.8rem;
+}
+
+.card-price {
+  margin-top: 0.5rem;
+  color: var(--accent);
+}
+
+.card-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.card-actions a, .card-actions button {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: var(--text-soft);
+}
+
+.card-actions a:hover, .card-actions button:hover {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+/* Alertas */
+.alert {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid;
+}
+
+.alert-success {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.alert-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.modal-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-soft);
+  border: 1px dashed var(--border);
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Utilitários */
+.text-center { text-align: center; }
+.text-soft { color: var(--text-soft); }
+.mt-2 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 1rem; }
+.flex { display: flex; gap: 0.5rem; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+
+
+
+/* Animações */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Cursor piscante estilo terminal */
+.loading-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+/* Remover outline padrão, manter apenas foco personalizado */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Estilo para placeholders */
+::placeholder {
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+/* Seleção de texto */
+::selection {
+  background: var(--accent);
+  color: var(--bg-main);
+}
